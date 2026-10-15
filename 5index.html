@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Многоликий Мастер</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #161f30;
+            --accent-color: #ffd700;
+            --text-color: #ffffff;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-color);
+            background-color: #202b42; /* Цвет фона, пока картинка грузится */
+        }
+
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            color: #e2e8f0;
+        }
+
+        .card ul li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .case-section {
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #334155;
+        }
+
+        .case-section h2 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .case-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background-color: #202b42;
+        }
+
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        .case-block {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .case-block h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .badge-before { color: #f87171; font-weight: bold; }
+        .badge-after { color: #4ade80; font-weight: bold; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            border-top: 1px solid #1e293b;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Какой наш мастер бывает</h1>
+        <p>Интерактивная галерея граней гениальности, силы, богатства и супергеройской харизмы</p>
+    </header>
+
+    <main>
+        <div class="grid">
+            <!-- Карточка 1 -->
+            <div class="card">
+                <img src="master_1.jpg" alt="Мастер-Просветитель" class="card-img">
+                <div class="card-content">
+                    <h2>Мастер-Просветитель</h2>
+                    <ul>
+                        <li>Несет свет знаний в самые темные уголки.</li>
+                        <li>Главный девиз: «Знание делает свободным».</li>
+                        <li>Преподает физику, математику и основы будущего.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="card">
+                <img src="master_2.jpg" alt="Финансовый Магнат" class="card-img">
+                <div class="card-content">
+                    <h2>Финансовый Магнат</h2>
+                    <ul>
+                        <li>Деньги для него — просто пыль, которую пора убрать.</li>
+                        <li>Подметает миллионы долларов обычным веником.</li>
+                        <li>Показывает истинные масштабы изобилия.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="card">
+                <img src="master_3.jpg" alt="Стальной Атлет" class="card-img">
+                <div class="card-content">
+                    <h2>Стальной Атлет</h2>
+                    <ul>
+                        <li>Живое воплощение: «Сила. Дисциплина. Победа».</li>
+                        <li>Идеальные пропорции вопреки законам физики.</li>
+                        <li>Тело, выкованное железной волей.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="card">
+                <img src="master_4.jpg" alt="Супергерой" class="card-img">
+                <div class="card-content">
+                    <h2>Супергерой</h2>
+                    <ul>
+                        <li>Ваш дружелюбный сосед на страже порядка.</li>
+                        <li>Рассекает между небоскребами Нью-Йорка.</li>
+                        <li>Спасает положение в самый нужный момент.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Карточка 5 -->
+            <div class="card">
+                <img src="master_5.jpg" alt="Яростный Защитник" class="card-img">
+                <div class="card-content">
+                    <h2>Яростный Защитник</h2>
+                    <ul>
+                        <li>Трудолюбив как пчела, опасен как лев.</li>
+                        <li>Ревностно защищает учебные сертификаты.</li>
+                        <li>Лучше приходить к нему с готовой домашкой.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Раздел Кейса До/После -->
+        <section class="case-section">
+            <h2>Эффект Мастера: Из дикарей в бизнесмены</h2>
+            <div class="case-grid">
+                <div class="case-block">
+                    <h3 class="badge-before">ДО НАСТАВНИЧЕСТВА</h3>
+                    <img src="master_before.jpg" alt="До наставничества" class="case-img">
+                    <p>Первобытные люди, собирающие яблоки в диких зарослях, вооруженные деревянными дубинками.</p>
+                </div>
+                <div class="case-block">
+                    <h3 class="badge-after">ПОСЛЕ НАСТАВНИЧЕСТВА</h3>
+                    <img src="master_after.jpg" alt="После наставничества" class="case-img">
+                    <p>Успешные топ-менеджеры в безупречных костюмах, с последними моделями iPhone у серого спорткара.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Многоликий Мастер. Все права защищены. Он разный, но всегда великолепный.</p>
+    </footer>
+
+</body>
+</html>
